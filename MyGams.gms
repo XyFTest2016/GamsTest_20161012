@@ -438,8 +438,8 @@ display V_mag, V_ang, lines_at_limit, Linecurrent, Maxlinecurrent, maximizer;
 *==== SECTION: Solution Save
 $ifthen %savesol% == 1
 execute_unload '%filepath%temp_solution.gdx', Pg, Qg, Vm, Va, shuntB, total_cost, LMP, LineSP;
-execute 'gams %filepath%save_solution.gms gdxcompress=1 --ac=1 --case=%case% --solution=%filepath%temp_solution.gdx --timeperiod=%timeperiod% --out=%filepath%%casename%_AC_base_solution.gdx'
-if(errorlevel ne 0, abort "Saving solution failed!");
+* execute 'gams %filepath%save_solution.gms gdxcompress=1 --ac=1 --case=%case% --solution=%filepath%temp_solution.gdx --timeperiod=%timeperiod% --out=%filepath%%casename%_AC_base_solution.gdx'
+* if(errorlevel ne 0, abort "Saving solution failed!");
 execute 'rm %filepath%temp_solution.gdx'
 $endif
 );
